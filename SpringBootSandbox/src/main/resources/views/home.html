@@ -3,15 +3,61 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/basePage}">
     <head>
-
+        <link rel="stylesheet" th:href="@{/css/home.css}" />
     </head>
     <body>
         <div layout:fragment="content">
             <div class="container">
-                <div>
+                <!-- Heading -->
+                <div class="row">
                     <h1><u>Welcome to the Spring Boot Sandbox</u></h1>
+                    <p class="tabDiv">This is where I am testing out new frameworks,
+                        libraries, and other stuff for work.</p>
                 </div>
+                <hr/>
+                
+                <!-- Chart.Js Example -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Using Chart.Js</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="chart-container homeChartContainer">
+                        <canvas id="homeChart"></canvas>
+                    </div>
+                </div>
+                <hr/>
+                
+                <!-- Alertify.Js Example -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Using Alertify.Js</h4>
+                        <button class="btn" id="alertBtn">Spawn Alert</button>
+                    </div>
+                </div>
+                <hr/>
+                
+                <!-- Datatables Example -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Using Data Tables</h4>
+                        <table id="dataTableExample" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <hr/>
             </div>
+        </div>
+        <div layout:fragment="extJs">
+            <script th:src="@{/js/home/home.js}"></script>
         </div>
     </body>
 </html>

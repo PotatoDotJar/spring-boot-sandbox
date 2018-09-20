@@ -2,6 +2,10 @@
     Created on : Sep 19, 2018, 3:38:18 PM
     Author     : Richard Nader Jr. <heelyskidrj@gmail.com>
 */
+hr {
+  margin-bottom: 40px;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -33,4 +37,8 @@ html, body {
   /* Fix height and extra white-space at bottom */
   display: flex;
   flex-direction: column;
+}
+
+.tabDiv {
+  margin-left: 10px;
 }

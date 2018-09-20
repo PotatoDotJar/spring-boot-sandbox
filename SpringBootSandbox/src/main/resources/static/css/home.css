@@ -1,0 +1,9 @@
+/*
+    Created on : Sep 20, 2018, 11:13:12 AM
+    Author     : Richard Nader Jr. <heelyskidrj@gmail.com>
+*/
+.homeChartContainer {
+  width: 80vw;
+  position: relative;
+  margin: 0 auto;
+}
