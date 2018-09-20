@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>An Error Has Occurred!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Error Occurred!</h1>    
+        <b>[<span th:text="${status}">status</span>]
+            <span th:text="${error}">error</span>
+        </b>
+        <p th:text="${message}">message</p>
+    </body>
+</html>
