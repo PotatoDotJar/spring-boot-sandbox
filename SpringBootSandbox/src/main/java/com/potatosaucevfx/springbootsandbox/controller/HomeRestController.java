@@ -1,7 +1,9 @@
 package com.potatosaucevfx.springbootsandbox.controller;
 
+import com.potatosaucevfx.springbootsandbox.model.Person;
+import com.potatosaucevfx.springbootsandbox.service.JsonService;
+import java.util.ArrayList;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeRestController {
     
     @RequestMapping("/home/tableData")
-    public String greeting() {
-        return "yes";
+    public ArrayList<Person> greeting() {
+        return JsonService.readTableData();
     }
 }

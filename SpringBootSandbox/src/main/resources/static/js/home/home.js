@@ -1,18 +1,40 @@
 /*
-    Created on : Sep 20, 2018, 11:13:12 AM
-    Author     : Richard Nader Jr. <heelyskidrj@gmail.com>
-*/
+ Created on : Sep 20, 2018, 11:13:12 AM
+ Author     : Richard Nader Jr. <heelyskidrj@gmail.com>
+ */
 
 $(document).ready(() => {
     console.log("Home page loaded!");
-    
+
     // For alertify
     $('#alertBtn').on('click', () => {
         alertify.alert("A new alert!", "This is a new alert!");
     });
-    
-    // For Datatables
-    $('#dataTableExample').DataTable();
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: contextPath + "home/tableData",
+        success: (data) => {
+            // For Datatables
+            $('#dataTableExample').DataTable({
+                data: data,
+                columns: [
+                    {data: "name"},
+                    {data: "occupation"},
+                    {data: "location"},
+                    {data: "extention"},
+                    {data: "startDate"},
+                    {data: "salary"}
+                ]
+            });
+        },
+        error: (e) => {
+            console.log(e);
+        }
+    });
+
+
 });
 
 

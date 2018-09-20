@@ -1,32 +1,69 @@
 package com.potatosaucevfx.springbootsandbox.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Richard Nader Jr. <heelyskidrj@gmail.com>
  */
 public class Person {
 
-    private String firstName;
-    private String lastName;
+    private String name;
+    private String occupation;
+    private String location;
+    private int extention;
+    private String startDate;
+    private String salary;
 
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person() {
+        
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getOccupation() {
+        return occupation;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getExtention() {
+        return extention;
+    }
+
+    public void setExtention(int extention) {
+        this.extention = extention;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
     }
 }
