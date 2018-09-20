@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html prefix="th: http://www.thymeleaf.org">
+    <head>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" th:fragment="navbar(selectedLink)">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" th:href="@{/}">
+                        <img src="https://spring.io/img/homepage/icon-spring-framework.svg" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div th:switch="${selectedLink}" th:remove="tag">
+                        <ul class="nav navbar-nav" th:case="'home'">
+                            <li class="active"><a th:href="@{/}">Home</a></li>
+                            <li><a th:href="@{/about}">About</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav" th:case="'about'">
+                            <li><a th:href="@{/}">Home</a></li>
+                            <li class="active"><a th:href="@{/about}">About</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav" th:case="*">
+                            <li><a th:href="@{/}">Home</a></li>
+                            <li><a th:href="@{/about}">About</a></li>
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </body>
+</html>
