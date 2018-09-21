@@ -1,8 +1,9 @@
 package com.potatosaucevfx.springbootsandbox.controller;
 
 import com.potatosaucevfx.springbootsandbox.model.Person;
-import com.potatosaucevfx.springbootsandbox.service.JsonService;
-import java.util.ArrayList;
+import com.potatosaucevfx.springbootsandbox.service.PersonService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HomeRestController {
-    
-    @RequestMapping("/home/tableData")
-    public ArrayList<Person> greeting() {
-        return JsonService.readTableData();
+
+    @Autowired
+    PersonService ps;
+
+    @RequestMapping("/users/all")
+    public List<Person> allUsers() {
+        return ps.getAllUsers();
     }
 }

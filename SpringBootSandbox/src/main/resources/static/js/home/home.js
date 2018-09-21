@@ -5,27 +5,29 @@
 
 $(document).ready(() => {
     console.log("Home page loaded!");
-
     // For alertify
     $('#alertBtn').on('click', () => {
         alertify.alert("A new alert!", "This is a new alert!");
     });
-
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: contextPath + "home/tableData",
+        url: contextPath + "users/all",
         success: (data) => {
             // For Datatables
             $('#dataTableExample').DataTable({
                 data: data,
                 columns: [
-                    {data: "name"},
-                    {data: "occupation"},
-                    {data: "location"},
-                    {data: "extention"},
-                    {data: "startDate"},
-                    {data: "salary"}
+                    {data: "userId"},
+                    {data: "firstName"},
+                    {data: "lastName"},
+                    {data: "email"},
+                    {data: "gender"},
+                    {data: "phone"},
+                    {data: "address"},
+                    {data: "city"},
+                    {data: "state"},
+                    {data: "zipcode"}
                 ]
             });
         },
@@ -33,11 +35,7 @@ $(document).ready(() => {
             console.log(e);
         }
     });
-
-
 });
-
-
 // For chart.js
 var ctx = $("#homeChart");
 var homeChart = new Chart(ctx, {
