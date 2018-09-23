@@ -20,7 +20,7 @@
     <body>
         <div class="viewport">
             <div th:replace="fragments/header :: navbar(${page})"></div>
-            <div layout:fragment="content">
+            <div layout:fragment="content" th:remove="tag">
                 <h3>No content specified.</h3>
             </div>
         </div>

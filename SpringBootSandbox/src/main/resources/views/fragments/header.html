@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html prefix="th: http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
     <head>
 
     </head>
@@ -34,8 +35,13 @@
                         </ul>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <div sec:authorize="isAuthenticated()" th:remove="tag">
+                            <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+                        </div>
+                        <div sec:authorize="isAnonymous()" th:remove="tag">
+                            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </div>
                     </ul>
                 </div>
 

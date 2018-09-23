@@ -1,0 +1,15 @@
+#signin-form {
+  width: 300px;
+  margin: 0 auto;
+}
+#signin-form .form-control {
+  margin-bottom: 10px;
+}
+
+.loggedOut {
+  padding: 12px;
+}
+
+.errorMessage {
+  padding: 12px;
+}

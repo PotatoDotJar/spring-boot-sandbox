@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/basePage}">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="bg-success loggedOut" th:if="${param.logout}">
+                <h4 class="text-center">You have been logged out..</h4>
+            </div>
+            <div class="bg-danger errorMessage" th:if="${param.error}">
+                <h4 class="text-center">Invalid username or password.</h4>
+            </div>
+            <div class="container">
+                <form id="signin-form" class="form-signin" th:action="@{/login}" method="post">
+                    <h2 class="form-signin-heading">Sandbox Login</h2>
+                    <label for="inputEmail" class="sr-only">Email Address</label>
+                    <input for="inputEmail" id="inputEmail" name="email" class="form-control"
+                           placeholder="Email address" type="text"
+                           required autofocus autocomplete="off" />
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input for="inputPassword" id="inputPassword" name="password" class="form-control"
+                           placeholder="Password" type="password"
+                           required autocomplete="off" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div layout:fragment="extJs">
+            <script th:src="@{/js/login/login.js}"></script>
+        </div>
+    </body>
+</html>

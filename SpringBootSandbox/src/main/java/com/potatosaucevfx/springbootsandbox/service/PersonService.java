@@ -23,4 +23,16 @@ public class PersonService {
         return people;
     }
 
+    public Person getUserByID(int id) {
+        String sql = "SELECT * FROM PersonData WHERE id = ?";
+        Person person = jdbcTemplate.queryForObject(sql, new Object[]{id}, new PersonMapper());
+        return person;
+    }
+
+    public Person getUserByEmail(String email) {
+        String sql = "SELECT * FROM PersonData WHERE email = ?";
+        Person person = jdbcTemplate.queryForObject(sql, new Object[]{email}, new PersonMapper());
+        return person;
+    }
+
 }
