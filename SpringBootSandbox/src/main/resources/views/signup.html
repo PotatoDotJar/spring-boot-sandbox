@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/basePage}">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="container">
+                <form id="signin-form" class="form-signin" th:action="@{/signup}" th:object="${user}" method="post">
+                    <h2 class="form-signin-heading">Sign Up</h2>
+                    <label for="inputFirstname" class="sr-only">First Name</label>
+                    <input for="inputFirstname" id="inputFirstname" name="text" class="form-control"
+                           placeholder="First Name" type="text" th:field="*{firstName}"
+                           required autofocus autocomplete="off" />
+
+                    <label for="inputLastname" class="sr-only">Last Name</label>
+                    <input for="inputLastname" id="inputLastname" name="text" class="form-control"
+                           placeholder="Last Name" type="text" th:field="*{lastName}"
+                           required autofocus autocomplete="off" />
+
+                    <label for="inputEmail" class="sr-only">Email Address</label>
+                    <input for="inputEmail" id="inputEmail" name="email" class="form-control"
+                           placeholder="Email address" type="text" th:field="*{email}"
+                           required autofocus autocomplete="off" />
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input for="inputPassword" id="inputPassword" name="password" class="form-control"
+                           placeholder="Password" type="password" th:field="*{password}"
+                           required autocomplete="off" />
+
+                    <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+                    <input for="inputConfirmPassword" id="inputConfirmPassword" name="cPassword" class="form-control"
+                           placeholder="Confirm Password" type="password"
+                           required autocomplete="off" />
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+        <div layout:fragment="extJs">
+            <script th:src="@{/js/login/signup.js}"></script>
+        </div>
+    </body>
+</html>
