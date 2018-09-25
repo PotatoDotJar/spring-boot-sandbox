@@ -28,7 +28,6 @@ public class LoginController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(auth instanceof AnonymousAuthenticationToken)) {
-            /* The user is already logged in :) */
             RedirectView view = new RedirectView("/", true);
             view.setExposeModelAttributes(false);
             return new ModelAndView(view);

@@ -36,6 +36,7 @@
                     </div>
                     <ul class="nav navbar-nav navbar-right">
                         <div sec:authorize="isAuthenticated()" th:remove="tag">
+                            <li><a href="#"> <span th:text="${user.firstName + ' ' + user.lastName}"></span></a></li>
                             <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
                         </div>
                         <div sec:authorize="isAnonymous()" th:remove="tag">

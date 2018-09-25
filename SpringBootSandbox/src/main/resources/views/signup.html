@@ -9,33 +9,47 @@
         <div layout:fragment="content">
             <div class="container">
                 <form id="signin-form" class="form-signin" th:action="@{/signup}" th:object="${user}" method="post">
+
                     <h2 class="form-signin-heading">Sign Up</h2>
-                    <label for="inputFirstname" class="sr-only">First Name</label>
-                    <input for="inputFirstname" id="inputFirstname" name="text" class="form-control"
-                           placeholder="First Name" type="text" th:field="*{firstName}"
-                           required autofocus autocomplete="off" />
+                    <div class="form-group" id="firstnameContainer">
+                        <label for="inputFirstname" class="sr-only">First Name</label>
+                        <input for="inputFirstname" id="inputFirstname" name="text" class="form-control"
+                               placeholder="First Name" type="text" th:field="*{firstName}"
+                               required autofocus autocomplete="off" />
+                    </div>
 
-                    <label for="inputLastname" class="sr-only">Last Name</label>
-                    <input for="inputLastname" id="inputLastname" name="text" class="form-control"
-                           placeholder="Last Name" type="text" th:field="*{lastName}"
-                           required autofocus autocomplete="off" />
+                    <div class="form-group" id="lastnameContainer">
+                        <label for="inputLastname" class="sr-only">Last Name</label>
+                        <input for="inputLastname" id="inputLastname" name="text" class="form-control"
+                               placeholder="Last Name" type="text" th:field="*{lastName}"
+                               required autofocus autocomplete="off" />
+                    </div>
 
-                    <label for="inputEmail" class="sr-only">Email Address</label>
-                    <input for="inputEmail" id="inputEmail" name="email" class="form-control"
-                           placeholder="Email address" type="text" th:field="*{email}"
-                           required autofocus autocomplete="off" />
+                    <div class="form-group" id="emailContainer">
+                        <label for="inputEmail" class="sr-only">Email Address</label>
+                        <input for="inputEmail" id="inputEmail" name="email" class="form-control has-error"
+                               placeholder="Email address" type="text" th:field="*{email}"
+                               required autofocus autocomplete="off" />
+                    </div>
 
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input for="inputPassword" id="inputPassword" name="password" class="form-control"
-                           placeholder="Password" type="password" th:field="*{password}"
-                           required autocomplete="off" />
 
-                    <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
-                    <input for="inputConfirmPassword" id="inputConfirmPassword" name="cPassword" class="form-control"
-                           placeholder="Confirm Password" type="password"
-                           required autocomplete="off" />
+                    <div class="form-group" id="passwordContainer">
+                        <label class="control-label hidden" for="inputPassword" id="passwordMatchValid" >Passwords don't match</label>
+                        <label class="control-label hidden" for="inputPassword" id="passwordLengthValid" >Passwords must be between 8 and 16 characters long</label>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input for="inputPassword" id="inputPassword" name="password" class="form-control"
+                               placeholder="Password" type="password" th:field="*{password}"
+                               required autocomplete="off" />
+                    </div>
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    <div class="form-group" id="passwordCContainer">
+                        <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+                        <input for="inputConfirmPassword" id="inputConfirmPassword" name="cPassword" class="form-control"
+                               placeholder="Confirm Password" type="password"
+                               required autocomplete="off" />
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">Sign up</button>
                 </form>
             </div>
         </div>

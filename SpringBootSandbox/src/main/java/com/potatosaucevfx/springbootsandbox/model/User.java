@@ -10,7 +10,7 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private boolean enabled;
+    private boolean enabled = true;
 
     public User() {
 
@@ -54,6 +54,11 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", enabled=" + enabled + '}';
     }
 
 }
